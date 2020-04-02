@@ -1,0 +1,34 @@
+Create an user based on the sent information
+---
+tags:
+  - user
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        last_name:
+          type: string
+          description: the last name of the user
+        first_name:
+          type: string
+          description: the first name of the user
+        emails:
+          type: list
+          description: the list of emails
+        phone_numbers:
+          type: list
+          description: the list of phone numbers
+
+responses:
+  200:
+    description: The user was successfully created
+    schema:
+      example:
+        user:
+          user_id: 1
+          last_name: Doe
+          first_name: John
+          emails: ["example@gmail.com"]
+          phone_numbers: ["+490000000"]
